@@ -1,4 +1,5 @@
 import pygame
+from os import path
 from pygame.sprite import Sprite
 
 
@@ -11,7 +12,8 @@ class Ship(Sprite):
         self.ai_settings = ai_settings
 
         # 加载飞船图像并获取其外接矩形
-        self.image = pygame.image.load('images/ship.bmp')
+        dir_path = path.dirname(path.abspath(__file__))
+        self.image = pygame.image.load(dir_path + r'\images\ship.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 

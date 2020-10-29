@@ -21,7 +21,8 @@ def run_game():
     play_button = Button(screen, '- Play -')
 
     # 背景图
-    background = pygame.image.load('images/background.jpg').convert()
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    background = pygame.image.load(dir_path + r'\images\background.jpg').convert()
 
     # 创建一个用于存储游戏统计信息的实例，并创建记分牌
     stats = GameStats(ai_settings)
